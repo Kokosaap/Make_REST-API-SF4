@@ -18,7 +18,7 @@ class ApiRestfulController extends Controller
 {
 
     /**
-     * @Route("/api-restful", name="api_restful")
+     * @Route("/home", name="api_restful")
      */
     public function index()
     {
@@ -30,7 +30,7 @@ class ApiRestfulController extends Controller
 
     /**
      * Lists all Users_infos.
-     * @FOSRest\Get("/users_infos")
+     * @FOSRest\Get("users_infos")
      *
      * @return array
      */
@@ -47,7 +47,7 @@ class ApiRestfulController extends Controller
 
     /**
      * Create User-Info.
-     * @FOSRest\Post("/user_info")
+     * @FOSRest\Post("user_info")
      *
      * @return array
      */

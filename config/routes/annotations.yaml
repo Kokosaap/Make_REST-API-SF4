@@ -1,3 +1,4 @@
 controllers:
-    resource: ../../src/Controller/
+    resource: ../../src/Entity/
     type: annotation
+
