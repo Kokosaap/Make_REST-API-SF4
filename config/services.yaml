@@ -48,3 +48,6 @@ fos_rest:
         default_engine: twig
         force_redirects:
                 html: true
+
+twig:
+    form_themes: ['bootstrap_4_layout.html.twig']

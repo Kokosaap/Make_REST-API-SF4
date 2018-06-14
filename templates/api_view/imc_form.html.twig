@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block form_header %}
+<blockquote id="get_color_txt">
+<h1 class="gradient-text">If you want to go quickly, go alone. If you want to go far, go together.</h1>
+<p><cite class="citation">– Probably Not Really An African Proverb</cite></p>
+</blockquote>
+
+{% endblock form_header %}
+
+
+{% block main %}
+
+{{ form_start(form) }}
+
+{{ form_row(form.gender) }}
+{{ form_row(form.name) }}
+{{ form_row(form.surname) }}
+{{ form_row(form.email) }}
+{{ form_row(form.age) }}
+{{ form_row(form.weight) }}
+{{ form_row(form.height) }}
+
+<div class="container">
+<div class="row">
+<h2>  <div class="col-md-12">
+<button type="submit" class="btn btn-labeled btn-success ajust-btn">
+<span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>&nbsp;Valider</button>
+
+<br /></h2>
+</div>
+</div>
+
+
+{{ form_end(form) }}
+
+{% endblock main %}

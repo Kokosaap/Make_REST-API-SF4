@@ -27,6 +27,34 @@ class ApiRestfulController extends Controller
     	]);
     }
 
+    public function check_your_IMC(Request $request)
+    {
+        // 1) build the form
+        $api = new ApiRestful();
+        $form = $this->createForm(ApiRestfulType::class, $api);
+
+        // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            // 4) save the api & users informations!
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($api);
+            $entityManager->flush();
+
+            // ... do any other work - like sending them an email, etc
+            // maybe set a "flash" success message for the user
+
+            return $this->redirectToRoute('form');
+        }
+
+        return $this->render(
+            'api_restful/form.html.twig',
+            array('form' => $form->createView())
+        );
+    }
+
 
     /**
      * Lists all Users_infos.

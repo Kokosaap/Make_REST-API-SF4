@@ -1,0 +1,8 @@
+@media (min-width: 1200px){
+	.reduce-form {
+		width: 900px !important;
+	}
+	.container {
+		width: 900px !important;
+	}
+}

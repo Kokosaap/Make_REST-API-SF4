@@ -1,15 +1,30 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction # initialisation de la nouvelle page d'accueil
+  defaults:
+    template: 'home.html.twig'
+
+
 home:
-   path: /home
-   controller: App\Controller\ApiRestfulController::index
+  path: /home
+  controller: App\Controller\ApiRestfulController::index
 
 get:
-   path: /users_infos
-   defaults: { _controller: App\Controller\ApiRestfulController::getUserInfoAction, _format: json }
+  path: /users_infos
+  defaults: { _controller: App\Controller\ApiRestfulController::getUserInfoAction, _format: json }
 
 post:
-   path: /user_info
-   defaults: { _controller: App\Controller\ApiRestfulController::postUserInfoAction, _format: json }
+  path: /user_info
+  defaults: { _controller: App\Controller\ApiRestfulController::postUserInfoAction, _format: json }
 
+hp:
+  path: /hp
+  defaults: { _controller: App\Controller\ApiViewController::index }
+
+form:
+  path: /form
+  defaults: { _controller: App\Controller\ApiViewController::check_your_IMC }
+
+test:
+  path: /test
+  defaults: { _controller: App\Controller\ApiViewController::test }

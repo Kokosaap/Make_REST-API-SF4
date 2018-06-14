@@ -3,12 +3,32 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ApiRestfulRepository")
  */
 class ApiRestful
 {
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata) /* Validation fields */
+    {
+        /* below -> email format validation */
+        $metadata->addPropertyConstraint('email', new Assert\Email(array(
+            'message' => 'The email "{{ value }}" is not a valid email.',
+            'mode' => "loose",
+        )));
+        /* below -> Gender choices validation */
+        $metadata->addPropertyConstraint('gender', new Assert\Choice(array(
+            'choices' => array('Homme', 'Femme', 'Autre'),
+            'message' => 'Choose a valid gender.',
+        )));
+
+
+    }
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -16,6 +36,9 @@ class ApiRestful
      */
     private $id;
 
+    /**
+     * @Assert\Choice({"Homme", "Femme", "Autre"})
+     */
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -39,6 +62,7 @@ class ApiRestful
     /**
      * @ORM\Column(type="string", length=255)
      */
+
     private $email;
 
     /**

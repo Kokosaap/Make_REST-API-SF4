@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d068636872aad4949c7871be983ab54",
+    "content-hash": "6ad65f6a7ff6c34de9d7d62d0043d64f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5364,16 +5364,16 @@
     "packages-dev": [
         {
             "name": "easycorp/easy-log-handler",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/easy-log-handler.git",
-                "reference": "1a617a37ab9389eac4e2e1d14cb70ee0087d724d"
+                "reference": "21c442f5d08b6761a6fa7653e08a5525fb4ccd2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/easy-log-handler/zipball/1a617a37ab9389eac4e2e1d14cb70ee0087d724d",
-                "reference": "1a617a37ab9389eac4e2e1d14cb70ee0087d724d",
+                "url": "https://api.github.com/repos/EasyCorp/easy-log-handler/zipball/21c442f5d08b6761a6fa7653e08a5525fb4ccd2b",
+                "reference": "21c442f5d08b6761a6fa7653e08a5525fb4ccd2b",
                 "shasum": ""
             },
             "require": {
@@ -5410,7 +5410,7 @@
                 "monolog",
                 "productivity"
             ],
-            "time": "2018-01-10T08:34:20+00:00"
+            "time": "2018-06-12T06:27:09+00:00"
         },
         {
             "name": "nikic/php-parser",
