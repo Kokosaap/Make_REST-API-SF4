@@ -11,6 +11,7 @@
 	{% block stylesheets %}
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('/css/loader.css') }}">
 	{% endblock%}
 	<!------ Include the above in your HEAD tag ---------->
 </head>
@@ -25,7 +26,8 @@
 				<span class="icon-bar"> </span>
 			</button>
 
-			<a class="navbar-brand" href="#"> Bootsnipp</a>
+			<a class="navbar-brand" href="/"> Home</a>
+			<a class="navbar-brand" href="/form"> Get your Imc</a>
 		</div>
 	</nav>
 
@@ -33,7 +35,7 @@
 	<div class="navbar  navbar-inverse navbar-fixed-bottom"> 
 		<div class="container">
 			<div class="navbar-text pull=left">
-				<p> © Kokosaap'Company.</p>
+				<p>© Kokosaap'Company.</p>
 			</div>
 
 		</div>
@@ -42,8 +44,8 @@
 <main id="reduce-form" role="main" class="container main">
 	{% block form_header %}{% endblock form_header %}
 	{% block main %} {% endblock main %}
-	
 </main>
+	{% block contain %} {% endblock contain %}
 
 
 

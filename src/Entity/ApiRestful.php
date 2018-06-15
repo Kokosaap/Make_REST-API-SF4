@@ -12,6 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ApiRestful
 {
 
+     
+
     public static function loadValidatorMetadata(ClassMetadata $metadata) /* Validation fields */
     {
         /* below -> email format validation */
@@ -21,7 +23,7 @@ class ApiRestful
         )));
         /* below -> Gender choices validation */
         $metadata->addPropertyConstraint('gender', new Assert\Choice(array(
-            'choices' => array('Homme', 'Femme', 'Autre'),
+            'choices' => array('Homme', 'Femme','homme', 'femme', 'autre', 'Autre'),
             'message' => 'Choose a valid gender.',
         )));
 
@@ -73,6 +75,7 @@ class ApiRestful
      * @ORM\Column(type="integer")
      */
     private $height;
+
 
     public function getId()
     {

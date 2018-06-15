@@ -18,12 +18,12 @@ post:
 
 hp:
   path: /hp
-  defaults: { _controller: App\Controller\ApiViewController::index }
+  defaults: { _controller: App\Controller\IMCController::index }
 
 form:
   path: /form
-  defaults: { _controller: App\Controller\ApiViewController::check_your_IMC }
+  defaults: { _controller: App\Controller\IMCController::form_IMC }
 
-test:
-  path: /test
-  defaults: { _controller: App\Controller\ApiViewController::test }
+success:
+  path: /form/success
+  defaults: { _controller: App\Controller\IMCController::success }

@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class ApiViewType extends AbstractType
+class IMCType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

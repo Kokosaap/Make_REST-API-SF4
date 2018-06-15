@@ -3,8 +3,8 @@
 {% block form_header %}
 <blockquote id="get_color_txt">
 
-<h1 class="gradient-text">If you want to go quickly, go alone. If you want to go far, go together.</h1>
-<p><cite class="citation">– Probably Not Really An African Proverb</cite></p>
+<h1 class="gradient-text">Fill out this form below to get your IMC by mail !</h1>
+<p><cite class="citation">– Ready?... Go!</cite></p>
 
 </blockquote>
 
@@ -15,13 +15,34 @@
 
 {{ form_start(form) }}
 
-{{ form_row(form.gender) }}
-{{ form_row(form.name) }}
+<div>
+{{ form_label(form.gender) }}
+{{ form_widget(form.gender) }}
+<br>
+</div>
+<div>
+{{ form_label(form.name, 'Nom') }}
+{{ form_widget(form.name) }}
+<br>
+</div>
+<div>
+{{ form_label(form.surname, 'Prénom') }}
+{{ form_widget(form.surname) }}
+<br>
+</div>
 {{ form_row(form.surname) }}
 {{ form_row(form.email) }}
 {{ form_row(form.age) }}
-{{ form_row(form.weight) }}
-{{ form_row(form.height) }}
+<div>
+{{ form_label(form.weight, 'Poids (Kg)') }}
+{{ form_widget(form.weight) }}
+<br>
+</div>
+<div>
+{{ form_label(form.height, 'Taille (cm)') }}
+{{ form_widget(form.height) }}
+<br>
+</div>
 
 <div class="container">
 <div class="row">
@@ -37,3 +58,4 @@
 {{ form_end(form) }}
 
 {% endblock main %}
+
