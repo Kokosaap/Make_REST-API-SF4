@@ -4,7 +4,6 @@ index:
   defaults:
     template: 'home.html.twig'
 
-
 home:
   path: /home
   controller: App\Controller\ApiRestfulController::index

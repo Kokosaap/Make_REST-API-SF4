@@ -28,7 +28,6 @@ class ApiRestful
 
     }
 
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

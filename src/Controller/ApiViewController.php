@@ -66,6 +66,4 @@ class ApiViewController extends Controller
     	);
     }
 
-
-
 }
