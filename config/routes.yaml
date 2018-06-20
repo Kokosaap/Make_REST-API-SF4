@@ -12,6 +12,7 @@ get:
   path: /users_infos
   defaults: { _controller: App\Controller\ApiRestfulController::getUserInfoAction, _format: json }
 
+
 post:
   path: /user_info
   defaults: { _controller: App\Controller\ApiRestfulController::postUserInfoAction, _format: json }
