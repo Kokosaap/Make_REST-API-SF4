@@ -51,3 +51,10 @@ fos_rest:
 
 twig:
     form_themes: ['bootstrap_4_layout.html.twig']
+
+nelmio_api_doc:
+    areas:
+        path_patterns: # an array of regexps
+            - ^/api(?!/doc$)
+        host_patterns:
+            - ^api\.

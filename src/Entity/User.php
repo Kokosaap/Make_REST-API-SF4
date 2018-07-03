@@ -6,31 +6,31 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+// use App\Controller\Users;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ApiRestfulRepository")
+ * ...
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"}
+ * )
  */
-class ApiRestful
+
+/**
+ * @ApiResource(itemOperations={
+ *     "get",
+ *     "users"={
+ *         "method"="GET",
+ *         "path"="/users_infos",
+ *         "controller"=User::class,
+           "defaults"={
+           "_api_receive"=false}
+ *     }
+ * })
+ */
+
+class User
 {
-
-     
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata) /* Validation fields */
-    {
-        /* below -> email format validation */
-        $metadata->addPropertyConstraint('email', new Assert\Email(array(
-            'message' => 'The email "{{ value }}" is not a valid email.',
-            'mode' => "loose",
-        )));
-        /* below -> Gender choices validation */
-        $metadata->addPropertyConstraint('gender', new Assert\Choice(array(
-            'choices' => array('Homme', 'Femme','homme', 'femme', 'autre', 'Autre'),
-            'message' => 'Choose a valid gender.',
-        )));
-
-
-    }
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -38,9 +38,6 @@ class ApiRestful
      */
     private $id;
 
-    /**
-     * @Assert\Choice({"Homme", "Femme", "Autre"})
-     */
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -64,19 +61,7 @@ class ApiRestful
     /**
      * @ORM\Column(type="string", length=255)
      */
-
     private $email;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $weight;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $height;
-
 
     public function getId()
     {
@@ -139,30 +124,6 @@ class ApiRestful
     public function setEmail(string $email): self
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function getWeight(): ?int
-    {
-        return $this->weight;
-    }
-
-    public function setWeight(int $weight): self
-    {
-        $this->weight = $weight;
-
-        return $this;
-    }
-
-    public function getHeight(): ?int
-    {
-        return $this->height;
-    }
-
-    public function setHeight(int $height): self
-    {
-        $this->height = $height;
 
         return $this;
     }

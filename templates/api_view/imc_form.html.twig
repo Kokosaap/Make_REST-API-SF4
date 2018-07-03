@@ -3,7 +3,7 @@
 {% block form_header %}
 <blockquote id="get_color_txt">
 
-<h1 class="gradient-text">Fill out this form below to get your IMC by mail !</h1>
+<h1 class="gradient-text">Fill out this form below to be register !</h1>
 <p><cite class="citation">– Ready?... Go!</cite></p>
 
 </blockquote>
@@ -33,16 +33,7 @@
 {{ form_row(form.surname) }}
 {{ form_row(form.email) }}
 {{ form_row(form.age) }}
-<div>
-{{ form_label(form.weight, 'Poids (Kg)') }}
-{{ form_widget(form.weight) }}
-<br>
-</div>
-<div>
-{{ form_label(form.height, 'Taille (cm)') }}
-{{ form_widget(form.height) }}
-<br>
-</div>
+
 
 <div class="container">
 <div class="row">

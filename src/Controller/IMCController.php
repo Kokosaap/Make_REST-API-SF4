@@ -35,15 +35,16 @@ class IMCController extends Controller
 
     public function form_IMC(Request $request, \Swift_Mailer $mailer)
     {
+
         // 1) build the form
-    	$api = new ApiRestful();
+        $api = new ApiRestful();
 
-    	$form = $this->createForm(IMCType::class, $api);
+        $form = $this->createForm(IMCType::class, $api);
 
-        // 2) handle the submit (will only happen on POST)
-    	$form->handleRequest($request);
+                // 2) handle the submit (will only happen on POST)
+        $form->handleRequest($request);
 
-    	if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $formData = $form->getData(); // Récuperer les infos du users issu du formulaire
 
@@ -61,24 +62,31 @@ class IMCController extends Controller
                     // 'emails/registration.html.twig',
                     'emails/registration.html.twig',
                     array('name' => $formData->getName(),
-                        'surname' => $formData->getSurname())
+                        'surname' => $formData->getSurname(),
+                        'height' => $formData->getHeight(),
+                        'weight' => $formData->getWeight())
                 ),
                 'text/html'
             );
 
-            $mailer->send($message);
+        $imc = $formData->getWeight() / ($formData->getHeight() * $formData->getHeight()); // début du calcul
+        $imc = round($imc * 10000, 2); // fin du calcul avec un arrondi
+        echo 'IMC = '. $imc .''; // résultat
+
+
+        $mailer->send($message);
 
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
 
-            return $this->redirectToRoute('success');
-        }
-
-        return $this->render(
-          'api_view/imc_form.html.twig',
-          array('form' => $form->createView())
-      );
+        return $this->redirectToRoute('success');
     }
+
+    return $this->render(
+      'api_view/imc_form.html.twig',
+      array('form' => $form->createView())
+  );
+}
 
 
 

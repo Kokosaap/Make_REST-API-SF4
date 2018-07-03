@@ -10,21 +10,34 @@ home:
 
 get:
   path: /users_infos
-  defaults: { _controller: App\Controller\ApiRestfulController::getUserInfoAction, _format: json }
+  defaults: { _controller: App\Controller\UsersController::getUserAction, _format: json }
 
 
 post:
   path: /user_info
-  defaults: { _controller: App\Controller\ApiRestfulController::postUserInfoAction, _format: json }
+  defaults: { _controller: App\Controller\UsersController::postUserInfoAction, _format: json }
 
 hp:
   path: /hp
-  defaults: { _controller: App\Controller\IMCController::index }
+  defaults: { _controller: App\Controller\Users::index }
 
 form:
   path: /form
-  defaults: { _controller: App\Controller\IMCController::form_IMC }
+  defaults: { _controller: App\Controller\UsersController::form_IMC }
 
 success:
   path: /form/success
-  defaults: { _controller: App\Controller\IMCController::success }
+  defaults: { _controller: App\Controller\UsersController::success }
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+# If you also want to expose it in JSON
+app.swagger:
+    path: /api/doc.json
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger }
+
+
